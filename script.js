@@ -19,5 +19,8 @@ function getHumanChoice(){
     return humanUpChoice
 }   
 
+let humanScore = 0
+let computerScore = 0
+
 console.log(getHumanChoice())
 console.log(getComputerChoice())
