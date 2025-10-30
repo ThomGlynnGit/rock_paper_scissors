@@ -34,12 +34,14 @@ function playRound(humanChoice, computerChoice){
         humanChoice === "SCISSORS" && computerChoice === "ROCK" 
     ){
         console.log("You have lost, so very badly")
+        computerScore += 1
     } else if (
         humanChoice === "ROCK" && computerChoice === "SCISSORS" ||
         humanChoice === "PAPER" && computerChoice === "ROCK" ||
         humanChoice === "SCISSORS" && computerChoice === "PAPER" 
     ){
         console.log("SMASH you win x")
+        humanScore += 1
     } else {
         console.log("Invalid input")
     }
