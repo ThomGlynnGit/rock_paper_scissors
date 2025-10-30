@@ -47,12 +47,58 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-let humanScore = 0
-let computerScore = 0
+function playGame(){
+    let humanScore = 0
+    let computerScore = 0
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+    function playRound(humanChoice, computerChoice){
+        let humanUpChoice = humanChoice.toUpperCase()
+    
+        if (
+            humanUpChoice === "ROCK" && computerChoice === "ROCK" ||
+            humanUpChoice === "PAPER" && computerChoice === "PAPER" ||
+            humanUpChoice === "SCISSORS" && computerChoice === "SCISSORS"
+        ){
+            console.log("The game is a tie")
+        } else if (
+            humanChoice === "ROCK" && computerChoice === "PAPER" ||
+            humanChoice === "PAPER" && computerChoice === "SCISSORS" ||
+            humanChoice === "SCISSORS" && computerChoice === "ROCK" 
+        ){
+            console.log("You have lost, so very badly")
+            computerScore += 1
+        } else if (
+            humanChoice === "ROCK" && computerChoice === "SCISSORS" ||
+            humanChoice === "PAPER" && computerChoice === "ROCK" ||
+            humanChoice === "SCISSORS" && computerChoice === "PAPER" 
+        ){
+            console.log("SMASH you win x")
+            humanScore += 1
+        } else {
+            console.log("Invalid input")
+        }
+    }
 
-playRound(humanSelection, computerSelection)
+    for(let i = 0; i < 5; i++){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection)
+    }
+
+    if (humanScore > computerScore){
+        console.log("Wooooow you won!")
+    } else if (computerScore > humanScore) {
+        console.log("Woooow you lost")
+    } else {
+        console.log("That's a tie dawg")
+    }
+    
+}
+
+playGame();
+
+
+
 
 
