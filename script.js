@@ -78,7 +78,8 @@ function playGame(){
             console.log("Invalid input")
         }
     }
-
+    
+    /*
     for(let i = 0; i < 5; i++){
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
@@ -94,7 +95,7 @@ function playGame(){
         console.log("Woooow you lost")
     } else {
         console.log("That's a tie dawg")
-    }
+    }*/
     
 }
 
