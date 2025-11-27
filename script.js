@@ -21,7 +21,9 @@ function getHumanChoice(){
 
 function playRound(humanChoice, computerChoice){
     let humanUpChoice = humanChoice.toUpperCase()
-    
+    console.log(typeof(humanUpChoice) + " " + humanUpChoice)
+    console.log(typeof(computerChoice) + " " + computerChoice)
+
     if (
         humanUpChoice === "ROCK" && computerChoice === "ROCK" ||
         humanUpChoice === "PAPER" && computerChoice === "PAPER" ||
@@ -29,57 +31,28 @@ function playRound(humanChoice, computerChoice){
     ){
         console.log("The game is a tie")
     } else if (
-        humanChoice === "ROCK" && computerChoice === "PAPER" ||
-        humanChoice === "PAPER" && computerChoice === "SCISSORS" ||
-        humanChoice === "SCISSORS" && computerChoice === "ROCK" 
+        humanUpChoice === "ROCK" && computerChoice === "PAPER" ||
+        humanUpChoice === "PAPER" && computerChoice === "SCISSORS" ||
+        humanUpChoice === "SCISSORS" && computerChoice === "ROCK" 
     ){
         console.log("You have lost, so very badly")
-        computerScore += 1
+        //computerScore += 1
     } else if (
-        humanChoice === "ROCK" && computerChoice === "SCISSORS" ||
-        humanChoice === "PAPER" && computerChoice === "ROCK" ||
-        humanChoice === "SCISSORS" && computerChoice === "PAPER" 
+        humanUpChoice === "ROCK" && computerChoice === "SCISSORS" ||
+        humanUpChoice === "PAPER" && computerChoice === "ROCK" ||
+        humanUpChoice === "SCISSORS" && computerChoice === "PAPER" 
     ){
         console.log("SMASH you win x")
-        humanScore += 1
+        //humanScore += 1
     } else {
         console.log("Invalid input")
     }
 }
-
+/*
 function playGame(){
     let humanScore = 0
     let computerScore = 0
-
-    function playRound(humanChoice, computerChoice){
-        let humanUpChoice = humanChoice.toUpperCase()
-    
-        if (
-            humanUpChoice === "ROCK" && computerChoice === "ROCK" ||
-            humanUpChoice === "PAPER" && computerChoice === "PAPER" ||
-            humanUpChoice === "SCISSORS" && computerChoice === "SCISSORS"
-        ){
-            console.log("The game is a tie")
-        } else if (
-            humanChoice === "ROCK" && computerChoice === "PAPER" ||
-            humanChoice === "PAPER" && computerChoice === "SCISSORS" ||
-            humanChoice === "SCISSORS" && computerChoice === "ROCK" 
-        ){
-            console.log("You have lost, so very badly")
-            computerScore += 1
-        } else if (
-            humanChoice === "ROCK" && computerChoice === "SCISSORS" ||
-            humanChoice === "PAPER" && computerChoice === "ROCK" ||
-            humanChoice === "SCISSORS" && computerChoice === "PAPER" 
-        ){
-            console.log("SMASH you win x")
-            humanScore += 1
-        } else {
-            console.log("Invalid input")
-        }
-    }
-    
-    /*
+ 
     for(let i = 0; i < 5; i++){
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
@@ -95,13 +68,32 @@ function playGame(){
         console.log("Woooow you lost")
     } else {
         console.log("That's a tie dawg")
-    }*/
+    }
     
-}
+}*/
 
-playGame();
+//playGame();
 
+let rockButton = document.querySelector("#rock-button")
+let paperButton = document.querySelector("#paper-button")
+let scissorsButton = document.querySelector("#scissors-button")
 
+rockButton.addEventListener("click",  (e) => {
+    let computerSelection = getComputerChoice()
+    let humanSelection = "rock"
+    playRound(humanSelection, computerSelection)
+})
+    
+paperButton.addEventListener("click", (e) => {
+    let computerSelection = getComputerChoice()
+    playRound("paper", computerSelection)
+})
+    
+scissorsButton.addEventListener("click", (e) => {
+    let computerSelection = getComputerChoice()
+    playRound("scissors", computerSelection)
+})
+    
 
 
 
