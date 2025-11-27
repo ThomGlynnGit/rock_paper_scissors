@@ -14,7 +14,6 @@ function getComputerChoice(){
 
 function getHumanChoice(){
     let humanChoice = prompt("Enter rock, paper, or scissors")
-    let humanUpChoice = humanChoice.toUpperCase()
 
     return humanUpChoice
 }   
@@ -80,8 +79,7 @@ let scissorsButton = document.querySelector("#scissors-button")
 
 rockButton.addEventListener("click",  (e) => {
     let computerSelection = getComputerChoice()
-    let humanSelection = "rock"
-    playRound(humanSelection, computerSelection)
+    playRound("rock", computerSelection)
 })
     
 paperButton.addEventListener("click", (e) => {
