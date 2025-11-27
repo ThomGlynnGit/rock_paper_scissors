@@ -35,17 +35,21 @@ function playRound(humanChoice, computerChoice){
         humanUpChoice === "SCISSORS" && computerChoice === "ROCK" 
     ){
         console.log("You have lost, so very badly")
-        //computerScore += 1
+        computerScore += 1
+        
     } else if (
         humanUpChoice === "ROCK" && computerChoice === "SCISSORS" ||
         humanUpChoice === "PAPER" && computerChoice === "ROCK" ||
         humanUpChoice === "SCISSORS" && computerChoice === "PAPER" 
     ){
         console.log("SMASH you win x")
-        //humanScore += 1
+        humanScore += 1
+        
     } else {
         console.log("Invalid input")
     }
+    console.log(humanScore)
+    console.log(computerScore)
 }
 /*
 function playGame(){
@@ -73,25 +77,42 @@ function playGame(){
 
 //playGame();
 
+let humanScore = 0
+let computerScore = 0
+
+//create event listeners for buttons to play game with selected inupt
 let rockButton = document.querySelector("#rock-button")
 let paperButton = document.querySelector("#paper-button")
 let scissorsButton = document.querySelector("#scissors-button")
 
+const humanScoreText = document.querySelector("#human-score")
+const computerScoreText = document.querySelector("#computer-score")
+
 rockButton.addEventListener("click",  (e) => {
     let computerSelection = getComputerChoice()
     playRound("rock", computerSelection)
+
+    humanScoreText.textContent = `Human: ${humanScore}`
+    computerScoreText.textContent = `Computer: ${computerScore}`
 })
     
 paperButton.addEventListener("click", (e) => {
     let computerSelection = getComputerChoice()
     playRound("paper", computerSelection)
+
+     humanScoreText.textContent = `Human: ${humanScore}`
+    computerScoreText.textContent = `Computer: ${computerScore}`
 })
     
 scissorsButton.addEventListener("click", (e) => {
     let computerSelection = getComputerChoice()
     playRound("scissors", computerSelection)
+
+     humanScoreText.textContent = `Human: ${humanScore}`
+    computerScoreText.textContent = `Computer: ${computerScore}`
 })
     
+
 
 
 
