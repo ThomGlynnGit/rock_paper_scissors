@@ -94,22 +94,40 @@ rockButton.addEventListener("click",  (e) => {
 
     humanScoreText.textContent = `Human: ${humanScore}`
     computerScoreText.textContent = `Computer: ${computerScore}`
+
+    if (humanScore === 5 && computerScore < 5){
+        alert("You won!")
+    } else if (computerScore === 5 && humanScore < 5){
+        alert("Computer wins")
+    }
 })
     
 paperButton.addEventListener("click", (e) => {
     let computerSelection = getComputerChoice()
     playRound("paper", computerSelection)
 
-     humanScoreText.textContent = `Human: ${humanScore}`
+    humanScoreText.textContent = `Human: ${humanScore}`
     computerScoreText.textContent = `Computer: ${computerScore}`
+
+    if (humanScore === 5 && computerScore < 5){
+        alert("You won!")
+    } else if (computerScore === 5 && humanScore < 5){
+        alert("Computer wins")
+    }
 })
     
 scissorsButton.addEventListener("click", (e) => {
     let computerSelection = getComputerChoice()
     playRound("scissors", computerSelection)
 
-     humanScoreText.textContent = `Human: ${humanScore}`
+    humanScoreText.textContent = `Human: ${humanScore}`
     computerScoreText.textContent = `Computer: ${computerScore}`
+
+    if (humanScore === 5 && computerScore < 5){
+        alert("You won!")
+    } else if (computerScore === 5 && humanScore < 5){
+        alert("Computer wins")
+    }
 })
     
 
